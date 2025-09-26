@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dog">
         <activity
+            android:name=".forget_password"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
