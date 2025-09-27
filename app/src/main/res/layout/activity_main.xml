@@ -10,7 +10,6 @@
     android:background="@drawable/bg_gradient"
     tools:context=".MainActivity">
 
-
     <!-- Gradient Background -->
     <View
         android:layout_width="0dp"
@@ -18,10 +17,20 @@
         android:background="@drawable/bg_gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_launcher_foreground"  <!-- replace with your logo -->
+    android:contentDescription="App Logo"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="40dp" />
 
     <!-- Welcome Text -->
     <TextView
@@ -32,10 +41,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#333333"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="16dp"/>
 
     <!-- Email Field -->
     <EditText
@@ -65,21 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:backgroundTint="#FF7043"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="12dp"
-        android:text="Login"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
-
+    <!-- Forgot Password -->
     <TextView
         android:id="@+id/forgotPasswordText"
         android:layout_width="wrap_content"
@@ -94,5 +89,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#FF7043"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgotPasswordText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
