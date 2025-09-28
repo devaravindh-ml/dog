@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Toolbar Title -->
     <TextView
         android:id="@+id/tvCommunityTitle"
         android:layout_width="wrap_content"
@@ -15,7 +14,6 @@
         android:textColor="@android:color/black"
         android:layout_margin="16dp" />
 
-    <!-- Google Map Fragment -->
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"

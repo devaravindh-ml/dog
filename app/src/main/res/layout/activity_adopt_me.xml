@@ -6,11 +6,15 @@
     android:background="@android:color/white"
     android:padding="16dp">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal">
+
+
 
         <!-- Dog Image -->
         <ImageView
