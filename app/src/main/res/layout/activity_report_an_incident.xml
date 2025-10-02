@@ -4,98 +4,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="16dp">
+    android:padding="20dp"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report an Incident"
+        android:textSize="32sp" android:textStyle="bold"
+        android:textColor="#212121" android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please provide accurate details about the dog-related incident. This tool is for serious situation only."
+        android:textSize="16sp" android:textColor="#616161" android:paddingBottom="32dp" /> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Incident Details"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#424242"
+    android:layout_marginBottom="12dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:hint="Date of incident"
+        app:startIconDrawable="@drawable/ic_calendar_24"  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Report an Incident"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:paddingBottom="8dp" />
-
-        <!-- Subtitle -->
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Please provide accurate details about the dog-related incident. This tool is for serious situation only."
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:paddingBottom="16dp" />
-
-        <!-- Date of Incident -->
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date of incident"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Time of incident"
+        app:startIconDrawable="@drawable/ic_clock_24"  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="16dp"> <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Time of Incident -->
-        <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Location of incident"
+        app:startIconDrawable="@drawable/ic_location_24"  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Time of incident"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginTop="12dp">
+            android:inputType="textPostalAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="time" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Describe the incident (e.g., dog appearance, actions)"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp">
 
-        <!-- Location -->
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Location of incident"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginTop="12dp">
+            android:minLines="3"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPostalAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Submit Button -->
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit Report"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#FF5722"
-            android:layout_marginTop="20dp"
-            android:padding="12dp" />
+    <Button
+        android:id="@+id/btnAddPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Photo Evidence"
+        android:textColor="#FF5722"  android:backgroundTint="@android:color/white"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"
+        app:strokeColor="#FF5722"  app:strokeWidth="2dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:cornerRadius="8dp"/>
 
 
-        <!-- Note -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Include a photo of the dog and its surroundings, if possible."
-            android:textSize="12sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginTop="12dp" />
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Report"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722" android:layout_marginTop="8dp"
+        android:padding="14dp"
+        app:cornerRadius="8dp"/>
 
-    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All reports are strictly confidential and will be reviewed by Paws Watch personnel."
+        android:textSize="12sp"
+        android:textColor="#616161"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
 </ScrollView>

@@ -1,75 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:padding="16dp">
+    android:background="#FAFAFA" tools:context=".MainActivity">
 
-
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never">
+
+    </ScrollView>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-        <!-- Dog Image -->
-        <ImageView
-            android:id="@+id/imgDog"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"
-            android:background="@drawable/rounded_image_bg"
-            android:contentDescription="Dog Image" />
-
-        <!-- Dog Breed -->
-        <TextView
+            <ImageView
+                android:id="@+id/imgDog"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_german"
+                android:contentDescription="Image of the dog up for adoption"
+                android:layout_marginBottom="24dp"
+                android:elevation="4dp"/> <TextView
             android:id="@+id/tvBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="German Shepherd"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="16dp" />
+            android:textColor="#212121" android:textSize="28sp"
+            android:textStyle="bold" />
 
-        <!-- Status Tag -->
-        <TextView
-            android:id="@+id/tvStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Not Adopted"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:padding="6dp"
-            android:background="@drawable/status_bg"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For Adoption"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
 
-        <!-- Dog Description -->
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Buddy is a friendly and energetic dog who loves to play fetch and go on walks. He is up-to-date on all vaccinations."
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginTop="12dp" />
 
-        <!-- Adopt Button -->
-        <Button
-            android:id="@+id/btnAdopt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Adopt Buddy"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#FF5722"
-            android:layout_marginTop="20dp"
-            android:padding="12dp" />
+                app:backgroundTint="#00897B"
 
-    </LinearLayout>
-</ScrollView>
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buddy's Profile"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#212121" android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buddy is a friendly and energetic German Shepherd who loves to play fetch and go on long walks. He is up-to-date on all vaccinations and is looking for a forever home with an active family. He is great with kids and other dogs after a short introduction period."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#616161" android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btnAdopt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adopt Buddy"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:backgroundTint="#FF5722"
+                android:padding="14dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="4dp" app:cornerRadius="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
