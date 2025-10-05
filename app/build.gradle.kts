@@ -45,4 +45,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    dependencies {
+        // ... other dependencies
+
+        // Add this line for Google Play Services Maps:
+        implementation("com.google.android.gms:play-services-maps:18.2.0")
+        // ... other dependencies
+    }
 }

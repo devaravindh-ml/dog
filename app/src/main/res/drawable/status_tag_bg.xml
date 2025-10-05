@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Define the inner shape as a solid block -->
+    <solid android:color="@android:color/transparent" />
+
+    <!-- Define the rounded corners -->
+    <corners android:radius="10dp" />
+</shape>
