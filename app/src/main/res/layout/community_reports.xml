@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_community_reports"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    tools:context=".ReportsActivity">
 
+    <!-- Toolbar (No title set here, assuming it's managed by the activity) -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -20,6 +22,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:contentInsetStartWithNavigation="0dp" />
 
+    <!-- Main Title -->
     <TextView
         android:id="@+id/tvCommunityTitle"
         android:layout_width="0dp"
@@ -37,6 +40,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         />
 
+    <!-- Subtitle -->
     <TextView
         android:id="@+id/tvSubtitle"
         android:layout_width="0dp"
@@ -51,6 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCommunityTitle" />
 
+    <!-- Map Card View Container -->
     <androidx.cardview.widget.CardView
         android:id="@+id/mapCard"
         android:layout_width="0dp"
@@ -68,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Map Fragment Container: This is the view referenced in ReportsActivity.kt -->
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/mapFragmentContainer"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -78,26 +84,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <!-- Toggle View Button (Removed unknown @drawable/ic_list_24 reference) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnToggleView"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:text="List View"
                 android:textColor="#212121"
-                app:icon="@drawable/ic_list_24"
-                app:iconTint="#212121"
                 android:backgroundTint="@android:color/white"
                 app:elevation="4dp"
                 app:cornerRadius="8dp"
+                app:icon="@android:drawable/ic_menu_sort_by_size"
+                app:iconTint="#212121"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -109,6 +117,7 @@
         app:layout_constraintStart_toStartOf="@+id/mapCard"
         app:layout_constraintTop_toTopOf="@+id/mapCard" />
 
+    <!-- Refresh FAB (Removed unknown @drawable/ic_refresh_24 reference) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabRefresh"
         android:layout_width="wrap_content"
@@ -116,16 +125,15 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="Refresh Data"
-
-        android:src="@drawable/ic_refresh_24"
+        android:src="@android:drawable/ic_popup_sync"
         android:backgroundTint="@android:color/white"
-
         app:tint="#616161"
         app:layout_constraintBottom_toTopOf="@+id/fabAction"
         app:layout_constraintEnd_toEndOf="parent"
         app:fabSize="mini"
         app:elevation="8dp" />
 
+    <!-- Add Report FAB (Removed unknown @drawable/ic_add_24 reference) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAction"
         android:layout_width="wrap_content"
@@ -134,7 +142,7 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="#FF5722"
         android:contentDescription="Add New Report"
-        android:src="@drawable/ic_add_24"
+        android:src="@android:drawable/ic_input_add"
         app:elevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

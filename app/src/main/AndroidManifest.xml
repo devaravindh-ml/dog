@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dog">
 
-        <!-- Add this meta-data tag inside the <application> block -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_GOOGLE_MAPS_API_KEY_HERE" />
+
+        <activity
+            android:name=".Main_Activity"  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:exported="false" />
+
+
         <activity
             android:name=".item_lost_found"
             android:exported="false" />
@@ -26,23 +40,14 @@
             android:name=".Adopt_Me"
             android:exported="false" />
         <activity
-            android:name=".Community_Reports"
-            android:exported="false" />
-        <activity
             android:name=".Report_an_Incident"
             android:exported="false" />
-        <activity
-            android:name=".forget_password"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
+
+        <activity android:name=".LoginActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
