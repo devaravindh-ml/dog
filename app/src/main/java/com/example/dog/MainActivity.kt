@@ -6,33 +6,39 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class LoginActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Ensure you have an 'activity_login.xml' layout file in res/layout/
+        // Ensure you have an 'activity_main.xml' layout file in res/layout/
         setContentView(R.layout.activity_main)
 
-        // 1. Find the login button using its ID from activity_login.xml
+        // 1. Find the login button
         val loginButton: Button = findViewById(R.id.buttonLogin)
 
-        // 2. Set the click listener
+        // **NEW: Find the Forget Password button**
+        val forgetPasswordButton: Button = findViewById(R.id.forgotPasswordButton)
+
+        // 2. Set the click listener for the Login button
         loginButton.setOnClickListener {
-            // In a real application, you would perform authentication checks here.
-            // For now, we immediately proceed to the next screen.
-
-            // Create an Intent to navigate from LoginActivity to Report_an_Incident
+            // Create an Intent to navigate from MainActivity to Report_an_Incident
             val intent = Intent(this, Report_an_Incident::class.java)
+            startActivity(intent)
+            finish()
+            Toast.makeText(this, "Logged in successfully! Navigating to Incident Report.", Toast.LENGTH_SHORT).show()
+        }
 
-            // Start the destination Activity
+        // **NEW: Set the click listener for the Forget Password button**
+        forgetPasswordButton.setOnClickListener {
+            // Create an Intent to navigate from MainActivity to ForgetPasswordActivity
+            // NOTE: You must create a class named ForgetPasswordActivity for this to work.
+            val intent = Intent(this, ForgetPasswordActivity::class.java)
             startActivity(intent)
 
-            // Optional: Call finish() if you don't want the user to return to the login screen
-            // by pressing the back button after a successful login.
-            finish()
+            // Optional: You usually don't call finish() here, as the user might want to
+            // return to the login screen after attempting to reset their password.
 
-            // Display a success message (for testing purposes)
-            Toast.makeText(this, "Logged in successfully! Navigating to Incident Report.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Navigating to Forget Password page.", Toast.LENGTH_SHORT).show()
         }
     }
 }
