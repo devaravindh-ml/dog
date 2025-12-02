@@ -4,6 +4,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,27 +38,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ForgetPasswordActivity"
-            android:exported="false" />
 
+        <activity android:name=".ForgetPasswordActivity" android:exported="false" />
+        <activity android:name=".item_lost_found" android:exported="false" />
+        <activity android:name=".Lost_Found" android:exported="false" />
+        <activity android:name=".Adopt_Me" android:exported="false" />
 
-        <activity
-            android:name=".item_lost_found"
-            android:exported="false" />
-        <activity
-            android:name=".Lost_Found"
-            android:exported="false" />
-        <activity
-            android:name=".Adopt_Me"
-            android:exported="false" />
-        <activity
-            android:name=".Report_an_Incident"
-            android:exported="false" />
+        <activity android:name=".MapSelectionActivity" android:exported="false" />
 
-
-
-
+        <activity android:name=".ReportAnIncident" android:exported="false" />
 
     </application>
 

@@ -11,14 +11,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header content outside the card to maintain screen branding/context -->
+
+
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="4dp"
             android:text="Report_an_Incident"
-
             android:textColor="#212121"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -32,7 +33,6 @@
             android:textColor="#616161"
             android:textSize="16sp" />
 
-        <!-- CardView wrapping the main form elements -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +66,8 @@
                         android:id="@+id/etDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="date" />
+                        android:inputType="date"
+                        android:text="27/11/2025" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -81,22 +82,23 @@
                         android:id="@+id/etTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="time" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:inputType="time"
+                        android:text="07:19 PM" /> </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLocation"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Location of incident"
-                    app:startIconDrawable="@drawable/ic_location_24">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textPostalAddress" />
+                    app:startIconDrawable="@drawable/ic_location_24"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_map_24"> <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress|textCapWords" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -144,8 +146,6 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <!-- End of CardView -->
-
 
         <TextView
             android:layout_width="wrap_content"

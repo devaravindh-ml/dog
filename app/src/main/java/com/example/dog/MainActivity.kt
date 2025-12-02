@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         // 2. Set the click listener for the Login button
         loginButton.setOnClickListener {
             // Create an Intent to navigate from MainActivity to Report_an_Incident
-            val intent = Intent(this, Report_an_Incident::class.java)
+            val intent = Intent(this, ReportAnIncident::class.java)
             startActivity(intent)
             finish()
             Toast.makeText(this, "Logged in successfully! Navigating to Incident Report.", Toast.LENGTH_SHORT).show()

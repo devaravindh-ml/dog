@@ -37,20 +37,24 @@ android {
 
 dependencies {
 
+    // All dependencies must be within this single block.
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+
+    // This line already imports the Material Components library, resolving the 'TextInputLayout' issue.
     implementation(libs.material)
+
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    dependencies {
-        // ... other dependencies
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+// Used for FusedLocationProviderClient (already in your original file)
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 
-        // Add this line for Google Play Services Maps:
-        implementation("com.google.android.gms:play-services-maps:18.2.0")
-        // ... other dependencies
-    }
+    // Removed the redundant, manually-added dependency line and the extra closing brace.
 }
