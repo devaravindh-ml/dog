@@ -79,7 +79,7 @@ class ReportAnIncident : AppCompatActivity() {
                 Toast.makeText(this@ReportAnIncident, "Report Submitted Successfully!", Toast.LENGTH_LONG).show()
 
                 // 🚨 UPDATED NAVIGATION: Move to Lost_Found page
-                val intent = Intent(this@ReportAnIncident, Lost_Found::class.java)
+                val intent = Intent(this@ReportAnIncident, LostFoundActivity::class.java)
                 startActivity(intent)
                 finish() // Optionally finish the current activity so the user can't press back to return to the empty form
             }

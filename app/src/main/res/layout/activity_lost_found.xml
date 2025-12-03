@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#F0F0F0">
 
-    <!-- CardView to hold the Title and Search Bar, giving it an elevated look -->
     <androidx.cardview.widget.CardView
         android:id="@+id/headerCard"
         android:layout_width="match_parent"
@@ -15,6 +14,7 @@
         android:layout_marginEnd="12dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
+        app:contentPaddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,20 +31,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Lost @amp;Found Pets"
-                android:textColor="#212121"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Paws in Peril &amp; Joyful Reunions"
+                android:textColor="#FF5722"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/searchLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Search by breed, name, or location"
-
-
-                app:endIconDrawable="@drawable/ic_filter_list_24"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:endIconContentDescription="Filter Listings"
+                app:endIconDrawable="@drawable/ic_paw_print_filter_24"
                 app:endIconMode="custom"
                 app:hintTextColor="#616161"
                 app:startIconDrawable="@drawable/ic_search_24">
@@ -76,17 +80,20 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All Listings" />
+            android:icon="@drawable/ic_list_24"
+            android:text="All" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lost Pets" />
+            android:icon="@drawable/ic_missing_24"
+            android:text="Lost" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Found Pets" />
+            android:icon="@drawable/ic_found_24"
+            android:text="Found" />
     </com.google.android.material.tabs.TabLayout>
 
     <TextView
@@ -95,11 +102,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="32dp"
-        android:text="No pets matched your search criteria. Try a different filter or report one!"
+        android:text="No pets matched your criteria.\nTry a new search or be the first to report one!"
         android:textColor="#616161"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textStyle="italic"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/fabReport"
+        app:drawableTopCompat="@drawable/ic_sad_dog_face_100"
+        android:drawablePadding="16dp"  app:layout_constraintBottom_toTopOf="@id/fabReport"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayoutFilter" />
@@ -109,6 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
+        android:paddingTop="8dp"
         android:paddingBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:backgroundTint="#FF5722"
-        android:text="Report Pet"
+        android:text="Report Lost/Found"
         android:textColor="@android:color/white"
         app:icon="@drawable/ic_add_24"
         app:iconTint="@android:color/white"

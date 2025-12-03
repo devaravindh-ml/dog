@@ -1,3 +1,5 @@
+// build.gradle.kts (Module: app)
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -15,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        // ⭐ ADDED THIS BLOCK TO ENABLE VIEW BINDING ⭐
+        viewBinding = true
     }
 
     buildTypes {
@@ -53,8 +60,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("com.google.android.gms:play-services-maps:18.2.0")
-// Used for FusedLocationProviderClient (already in your original file)
+    // Used for FusedLocationProviderClient
     implementation("com.google.android.gms:play-services-location:21.0.1")
-
-    // Removed the redundant, manually-added dependency line and the extra closing brace.
 }
