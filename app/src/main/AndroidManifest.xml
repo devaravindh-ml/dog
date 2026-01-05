@@ -41,7 +41,7 @@
 
         <activity android:name=".ForgetPasswordActivity" android:exported="false" />
         <activity android:name=".item_lost_found" android:exported="false" />
-        <activity android:name=".Lost_Found" android:exported="false" />
+        <activity android:name=".LostFound" android:exported="false" />
         <activity android:name=".Adopt_Me" android:exported="false" />
 
         <activity android:name=".MapSelectionActivity" android:exported="false" />

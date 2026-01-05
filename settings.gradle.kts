@@ -1,3 +1,5 @@
+// settings.gradle.kts
+
 pluginManagement {
     repositories {
         google {
@@ -19,5 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "dog"
-include(":app")
+rootProject.name = "dog" // Define project name once
+
+// This line correctly includes all necessary modules
+include(":app", ":mylibrary")
