@@ -1,3 +1,5 @@
+// build.gradle.kts (Module: app)
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -17,9 +19,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+<<<<<<< HEAD
     // CRITICAL FIX: The redundant and incorrectly nested 'android' block is removed.
     // The buildFeatures block is placed correctly inside the main android block.
     buildFeatures {
+=======
+    buildFeatures {
+        // ⭐ ADDED THIS BLOCK TO ENABLE VIEW BINDING ⭐
+>>>>>>> d083d04f391b5d16f332d97e2f0b078b9df5f966
         viewBinding = true
     }
 
@@ -73,8 +80,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+<<<<<<< HEAD
     // REMOVED REDUNDANT LINES:
     // implementation("com.google.android.material:material:1.12.0") <-- Redundant with libs.material
     // implementation("androidx.core:core-ktx:1.9.0")               <-- Redundant with libs.androidx.core.ktx
     // testImplementation("junit:junit:4.13.2")                      <-- Redundant with libs.junit
+=======
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    // Used for FusedLocationProviderClient
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+>>>>>>> d083d04f391b5d16f332d97e2f0b078b9df5f966
 }
